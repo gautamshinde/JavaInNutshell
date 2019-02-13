@@ -1,4 +1,4 @@
-package jdk8feature.enumdesign;
+package feature.jdk8.enumusage;
 
 import java.util.function.BiFunction;
 
