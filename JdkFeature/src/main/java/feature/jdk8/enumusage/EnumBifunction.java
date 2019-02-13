@@ -2,7 +2,7 @@ package feature.jdk8.enumusage;
 
 import java.util.function.BiFunction;
 
-public class EnumSample {
+public class EnumBifunction {
 	public static void main(String[] args) {		
 		System.out.println("Sum = "+ new PressureMeasureService().computePressure(Type.HIGH, 100));
 	}
