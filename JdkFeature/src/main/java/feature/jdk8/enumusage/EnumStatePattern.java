@@ -5,17 +5,14 @@ import java.util.List;
 
 import org.apache.commons.lang3.Validate;
 
-public class EnumStatePattern {	
-
+public class EnumStatePattern {
 	public static void main(String[] args) {
 		ShoppingCart cart = new ShoppingCart();
 		cart.addOrder("Spring book");
 		cart.addOrder("Pencil");
 		cart.setOrderNo("1");
-		cart.order();
-		
-	}
-	
+		cart.order();		
+	}	
 }
 
 class ShoppingCart{
