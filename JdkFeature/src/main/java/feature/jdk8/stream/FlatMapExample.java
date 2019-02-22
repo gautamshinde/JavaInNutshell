@@ -1,14 +1,15 @@
 package feature.jdk8.stream;
 
 import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
+import static feature.jdk8.util.Utility.expand;
 import static java.util.stream.Collectors.toList;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class FlatMapSample {
+public class FlatMapExample {
 	public static void main(String[] args) throws Exception {
-		excuteAllStaticMethodWithPrefixSample(FlatMapSample.class);
+		excuteAllStaticMethodWithPrefixSample(FlatMapExample.class);
 	}
 
 	public static void sample1() {
@@ -19,11 +20,6 @@ public class FlatMapSample {
 		System.out.println(expand(language));
 		// Map & Filter
 		list.stream().map(String::toUpperCase).filter(s -> s.length() == 6).forEach(System.out::println);
-	}
-
-	public static List<String> expand(String s){
-		List<String> list = s.codePoints().mapToObj(Character::toString).collect(toList());
-		return list;
 	}
 	
 	public static void sample2() {
@@ -57,5 +53,4 @@ public class FlatMapSample {
 									"Nothing gold can stay");
 		return list;
 	} 
-	
 }
