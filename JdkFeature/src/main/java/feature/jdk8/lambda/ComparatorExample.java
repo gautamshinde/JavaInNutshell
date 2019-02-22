@@ -1,5 +1,7 @@
 package feature.jdk8.lambda;
 
+import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -10,10 +12,8 @@ import java.util.function.Function;
 import feature.jdk8.model.Person;
 
 public class ComparatorExample {
-	public static void main(String[] args) {
-		sample1();
-		sample2();
-		sample3();
+	public static void main(String[] args) throws Exception {
+		excuteAllStaticMethodWithPrefixSample(ComparatorExample.class);
 	}
 
 	public static List<Person> initialize() {

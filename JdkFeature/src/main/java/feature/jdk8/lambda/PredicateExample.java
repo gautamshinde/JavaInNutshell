@@ -1,13 +1,14 @@
 package feature.jdk8.lambda;
 
+import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
+
 import java.util.Objects;
 import java.util.function.Predicate;
 
 public class PredicateExample {
 
-	public static void main(String[] args) {
-		sample1();
-		sample2();
+	public static void main(String[] args) throws Exception{
+		excuteAllStaticMethodWithPrefixSample(PredicateExample.class);
 	}
 
 	public static void sample1() {

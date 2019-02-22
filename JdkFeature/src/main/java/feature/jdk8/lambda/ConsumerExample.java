@@ -1,15 +1,15 @@
 package feature.jdk8.lambda;
 
+import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
 public class ConsumerExample {
-	public static void main(String[] args) {
-		simple1();
-		simple2();
-		simple3();
+	public static void main(String[] args) throws Exception {
+		excuteAllStaticMethodWithPrefixSample(ConsumerExample.class);	
 	}
 
 	public static void simple1() {
