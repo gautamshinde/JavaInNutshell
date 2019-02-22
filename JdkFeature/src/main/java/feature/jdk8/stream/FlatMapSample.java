@@ -6,9 +6,9 @@ import static java.util.stream.Collectors.toList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleExamples {
+public class FlatMapSample {
 	public static void main(String[] args) throws Exception {
-		excuteAllStaticMethodWithPrefixSample(SimpleExamples.class);
+		excuteAllStaticMethodWithPrefixSample(FlatMapSample.class);
 	}
 
 	public static void sample1() {
