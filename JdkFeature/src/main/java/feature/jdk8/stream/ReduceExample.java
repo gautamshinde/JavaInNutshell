@@ -1,13 +1,13 @@
 package feature.jdk8.stream;
 
+import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
+
 import java.math.BigInteger;
 import java.util.stream.LongStream;
 
-import feature.jdk8.util.Utility;
-
 public class ReduceExample {
 	public static void main(String[] args) throws Exception{
-		Utility.excuteAllStaticMethodWithPrefixSample(ReduceExample.class);
+		excuteAllStaticMethodWithPrefixSample(ReduceExample.class);
 	}
 	
 	public static void sample1() {

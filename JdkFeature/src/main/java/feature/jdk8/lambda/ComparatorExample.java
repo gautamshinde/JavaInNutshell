@@ -1,8 +1,8 @@
 package feature.jdk8.lambda;
 
+import static feature.jdk8.util.Utility.buildPersonList;
 import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -16,18 +16,9 @@ public class ComparatorExample {
 		excuteAllStaticMethodWithPrefixSample(ComparatorExample.class);
 	}
 
-	public static List<Person> initialize() {
-		List<Person> list = new ArrayList<>();
-		list.add(new Person("Viman", "Nagar", 37));
-		list.add(new Person("Elphinston", "Kirkee", 30));
-		list.add(new Person("Kirkee", "Station", 4));
-		list.add(new Person("Lohgad", "Fort", 24));
-		list.add(new Person("Murud", "Fort", 26));
-		return list;
-	}
 
 	public static void sample1() {
-		List<Person> list = initialize();
+		List<Person> list = buildPersonList();
 		Collections.sort(list, new Comparator<Person>() {
 			@Override
 			public int compare(Person p1, Person p2) {
@@ -50,14 +41,14 @@ public class ComparatorExample {
 	public static void sample2() {
 		Comparator<Person> cmp = Comparator.comparing(Person::getLastname).thenComparing(Person::getFirstname)
 				.thenComparing(Person::getAge);
-		List<Person> list = initialize();
+		List<Person> list = buildPersonList();
 		Collections.sort(list, cmp);
 		System.out.println("Sorted List " + list);
 	}
 
 	public static void sample3() {
 		System.out.println("***** Sample3 *****");
-		List<Person> list = initialize();
+		List<Person> list = buildPersonList();
 		Function<Person, String> getLastname = s -> s.getLastname();
 		// Function<Person, String> getFirstname = s -> s.getFirstname();
 		Comparator1<Person> c = Comparator1.comparing(getLastname).thenComparing((Person p) -> p.getLastname());
