@@ -32,7 +32,12 @@ public class Utility {
 		Comparator<Method> comp = Comparator.comparing(sortOnMethodName);
 		Collections.sort(methodList, comp);
 		for (Method method : methodList) {
+			try {
 			method.invoke(null, new Object[] {});
+			} catch(Exception e) {
+				System.out.println("Exception while invoking method "+method.getName()+" !!!!");
+				//e.printStackTrace();
+			}
 		}
 	}
 
