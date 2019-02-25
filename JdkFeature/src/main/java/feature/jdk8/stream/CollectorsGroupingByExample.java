@@ -29,5 +29,5 @@ public class CollectorsGroupingByExample {
 		List<String> sonnet = buildSonnet();
 		Map<String, List<String>> map  = sonnet.stream().collect(groupingBy(line -> line.substring(0, 1)));
 		System.out.println(map);
-	}
+	}	
 }

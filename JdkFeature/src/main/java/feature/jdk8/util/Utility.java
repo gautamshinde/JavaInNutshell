@@ -25,7 +25,7 @@ public class Utility {
 		Predicate<Method> staticMethod = m -> (m.getModifiers() & Modifier.STATIC) != 0;
 		List<Method> methodList = Arrays.stream(methods).filter(methodName.and(staticMethod)).collect(toList());
 		if (methodList == null || methodList.isEmpty()) {
-			System.out.println("You have not yet defined static method in class, please add !!");
+			System.out.println("Hey, you don't have implemented static method, pleasse do check !!");
 			return;
 		}
 		Function<Method, String> sortOnMethodName = m -> m.getName();
