@@ -12,19 +12,23 @@ public class PredicateExample {
 	public static void main(String[] args) throws Exception {
 		excuteAllStaticMethodWithPrefixSample(PredicateExample.class);
 	}
-	
+
 	public static void sample1() {
 		List<Person> list = buildPersonList();
-		Predicate<Person> agePredicate =  p -> p.getAge() > 30; 
+		Predicate<Person> agePredicate = p -> p.getAge() > 30;
 		list.stream().filter(agePredicate).forEach(System.out::println);
 	}
-	
-	public static Predicate<Person> combine(List<Predicate<Person>> predicateList) {
+
+	public static Predicate<Person> combine1(List<Predicate<Person>> predicateList) {
 		Predicate<Person> identity = p -> true;
 		for (Predicate<Person> predicate : predicateList) {
 			identity = identity.and(predicate);
 		}
 		return identity;
 	}
-	
+
+	public static Predicate<Person> combine2(List<Predicate<Person>> predicateList) {
+		return predicateList.stream().reduce(person -> true, Predicate::and);
+	}
+
 }
