@@ -3,6 +3,7 @@ package feature.jdk8.stream;
 import static feature.jdk8.util.Utility.buildSonnet;
 import static feature.jdk8.util.Utility.excuteAllStaticMethodWithPrefixSample;
 import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.flatMapping;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toList;
@@ -12,7 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class CollectorsCascadingExample {
 	//Classifier & Downstream
@@ -58,7 +58,7 @@ public class CollectorsCascadingExample {
 	//flatMapping 
 	public static void sample7() {
 		List<String> sonnet = buildSonnet();
-		Map<String, Set<String>> map  = sonnet.stream().collect(groupingBy(line -> line.substring(0, 1), Collectors.flatMapping(line -> Arrays.stream(line.split(" +")), toSet())));
+		Map<String, Set<String>> map  = sonnet.stream().collect(groupingBy(line -> line.substring(0, 1), flatMapping(line -> Arrays.stream(line.split(" +")), toSet())));
 		System.out.println(map);
 	}
 }
