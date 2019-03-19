@@ -32,13 +32,13 @@ public class ArrangeValue1 {
 		if(transformMap.containsKey(entry.getValue())) {
 			String valueList = transformMap.get(entry.getValue());
 			valueList = valueList+","+entry.getKey();
-			transformMap.put(entry.getValue(), valueList);
-			
+			transformMap.put(entry.getValue(), valueList);			
 		} else {
 			transformMap.put(entry.getValue(), entry.getKey());
 		}		
 		return entry;
-	}
-	
+	}	
 	
 }
+
+
