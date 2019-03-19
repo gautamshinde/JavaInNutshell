@@ -1,4 +1,8 @@
-package design.usecase.multithreading.lazymandailyroutine;
+package design.usecase.multithreading.lazymandailyroutine.client;
+
+import design.usecase.multithreading.lazymandailyroutine.ActivityProducer;
+import design.usecase.multithreading.lazymandailyroutine.ActivityValidator;
+import design.usecase.multithreading.lazymandailyroutine.DailyActivitiesRoutine;
 
 public class DemoRunner {
 
