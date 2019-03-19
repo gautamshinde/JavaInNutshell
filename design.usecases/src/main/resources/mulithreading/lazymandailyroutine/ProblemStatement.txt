@@ -1,0 +1,5 @@
+A lazy man's daily routine is Eat, Drink and Sleep. If he follows Eat, Drink and Sleep activities in same order every day.
+He doesn't Eat after Drink, doesn't Drink after walking up and doesn't sleep after Eat 
+(Orders is always E->D->S->E->D->S)
+write multi-threaded application in which Thread T1 posts the activities to Thread2 which waits for the next valid activity
+and print if it receives. T2 ignores the invalid activity (activity which doesn't follow the right order)
