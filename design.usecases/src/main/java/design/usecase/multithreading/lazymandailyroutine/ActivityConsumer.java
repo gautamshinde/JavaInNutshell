@@ -1,19 +1,17 @@
 package design.usecase.multithreading.lazymandailyroutine;
 
-public class ActivityValidator implements Runnable {
+public class ActivityConsumer implements Runnable {
 	
 	private DailyActivitiesRoutine routine;
 		
-	public ActivityValidator(DailyActivitiesRoutine routine) {
+	public ActivityConsumer(DailyActivitiesRoutine routine) {
 		super();
 		this.routine = routine;
 	}
 
 	public void run() {
 		try {
-			while(true) {
-				routine.consumeActivitiesAndValidateCorrectOrder();
-			}
+			routine.consumeActivitiesAndValidateCorrectOrder();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

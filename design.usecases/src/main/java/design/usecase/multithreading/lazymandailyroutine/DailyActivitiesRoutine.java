@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class DailyActivitiesRoutine {
 	
 	private BlockingQueue<String> activityGeneratorQueue = new ArrayBlockingQueue<>(12); 
-	private String activitiesSequence = "EDSE";
+	private String activitiesSequence = "EDS";
 	private volatile String prevActivity = "";
 	
 	
@@ -20,16 +20,18 @@ public class DailyActivitiesRoutine {
 	}
 	
 	public void consumeActivitiesAndValidateCorrectOrder() throws Exception {
-		String currentActivity = activityGeneratorQueue.take();
-		if(prevActivity.isEmpty() && !currentActivity.equals(String.valueOf(activitiesSequence.charAt(0)))) {
-			return;
-		}
-		if(activitiesSequence.contains(prevActivity+currentActivity)) {
-			prevActivity = currentActivity;				
-			System.out.println("Valid activity "+currentActivity);
-			if(currentActivity.equals(String.valueOf(activitiesSequence.charAt(2)))) {
-				System.out.println("====================");
+		while (true) {
+			String currentActivity = activityGeneratorQueue.take();
+			if (prevActivity.isEmpty() && !currentActivity.equals(String.valueOf(activitiesSequence.charAt(0)))) {
+				return;
 			}
-		}		
+			if ((activitiesSequence+activitiesSequence.charAt(0)).contains(prevActivity + currentActivity)) {
+				prevActivity = currentActivity;
+				System.out.println("Valid activity " + currentActivity);
+				if (currentActivity.equals(String.valueOf(activitiesSequence.charAt(2)))) {
+					System.out.println("====================");
+				}
+			}
+		}
 	}	
 }
